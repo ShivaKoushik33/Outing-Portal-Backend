@@ -10,8 +10,10 @@ const careTakerRoutes=require("./Routers/careTakerRouter");
 const studentRoutes=require("./Routers/studentRouter");
 const outingRoutes=require("./Routers/outingRouter");
 
-
-app.use(cors());
+app.use(cors({
+    origin: 'https://outing-portal-frontend.vercel.app',
+    methods: ['GET', 'POST',"PUT","DELETE"]  // Allow only GET and POST requests
+  }));
 dotEnv.config();
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
