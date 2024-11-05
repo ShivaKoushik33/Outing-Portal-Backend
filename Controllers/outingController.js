@@ -78,7 +78,8 @@ const getAllOutings=async(req,res)=>{
 
 const getOutingByStudentId=async(req,res)=>{
     try {
-        const outing = await Outing.findById(req.params.id).populate('studentId');
+        const outing = await Outing.find({"studentId": req.params.id});
+        console.log(req.params.id);
         if (!outing) {
           return res.status(404).json({
             success:false,

@@ -14,6 +14,12 @@ app.use(cors({
     origin: 'https://outing-portal-frontend.vercel.app',
     methods: ['GET', 'POST',"PUT","DELETE"]  // Allow only GET and POST requests
   }));
+
+//   app.use(cors({
+//     // origin: 'https://outing-portal-frontend.vercel.app',
+//     // methods: ['GET', 'POST',"PUT","DELETE"]  // Allow only GET and POST requests
+//   }));
+
 dotEnv.config();
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
